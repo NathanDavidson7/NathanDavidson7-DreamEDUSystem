@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamEDUBackOffice", "DreamEDUBackOffice\DreamEDUBackOffice.csproj", "{8E531954-5744-4260-9806-DC970E207EE8}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DreamEDUFrontOffice", "DreamEDUFrontOffice\", "{52C8EE3D-1838-4720-8A62-41DE90BA773D}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_14275"
+		Debug.AspNetCompiler.PhysicalPath = "DreamEDUFrontOffice\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14275\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_14275"
+		Release.AspNetCompiler.PhysicalPath = "DreamEDUFrontOffice\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14275\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "14275"
+		SlnRelativePath = "DreamEDUFrontOffice\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamEDUClasses", "DreamEDUClasses\DreamEDUClasses.csproj", "{9DEB2203-5A51-42BA-9DD8-43EE8C7B0CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamEDU Testing", "DreamEDU Testing\DreamEDU Testing.csproj", "{614F4A24-FCB8-4295-92B4-B0E27B66504A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E531954-5744-4260-9806-DC970E207EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E531954-5744-4260-9806-DC970E207EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E531954-5744-4260-9806-DC970E207EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E531954-5744-4260-9806-DC970E207EE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52C8EE3D-1838-4720-8A62-41DE90BA773D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C8EE3D-1838-4720-8A62-41DE90BA773D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C8EE3D-1838-4720-8A62-41DE90BA773D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C8EE3D-1838-4720-8A62-41DE90BA773D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9DEB2203-5A51-42BA-9DD8-43EE8C7B0CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DEB2203-5A51-42BA-9DD8-43EE8C7B0CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DEB2203-5A51-42BA-9DD8-43EE8C7B0CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DEB2203-5A51-42BA-9DD8-43EE8C7B0CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{614F4A24-FCB8-4295-92B4-B0E27B66504A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{614F4A24-FCB8-4295-92B4-B0E27B66504A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{614F4A24-FCB8-4295-92B4-B0E27B66504A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{614F4A24-FCB8-4295-92B4-B0E27B66504A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F79807D-3E80-4BFE-94A2-0E195F272524}
+	EndGlobalSection
+EndGlobal
