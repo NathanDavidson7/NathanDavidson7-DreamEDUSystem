@@ -53,6 +53,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstStaff.cs" />
     <Compile Include="testCourses.cs" />
+    <Compile Include="AvailableCourse.cs" />
+    <Compile Include="LiveDateCourse.cs" />
+    <Compile Include="priceCourse.cs" />
+    <Compile Include="IDCourse.cs" />
+    <Compile Include="TitleCourse.cs" />
+    <Compile Include="CategoryCourse.cs" />
+    <Compile Include="TutorCourse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
