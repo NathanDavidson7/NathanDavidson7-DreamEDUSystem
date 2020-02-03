@@ -1,0 +1,4 @@
+﻿[03/02/2020 18:33:13 Informational] ------ Discover test started ------
+[03/02/2020 18:33:15 Informational] ========== Discover test finished: 9 found (0:00:01.8032235) ==========
+[03/02/2020 18:33:15 Informational] ------ Run test started ------
+[03/02/2020 18:33:16 Informational] ========== Run test finished: 9 run (0:00:01.1190898) ==========
