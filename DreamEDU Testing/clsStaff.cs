@@ -1,6 +1,6 @@
-﻿using System;
-
-namespace DreamEDU_Testing
+﻿namespace DreamEDU_Testing
 {
-
+    public class clsStaff
+    {
+    }
 }
