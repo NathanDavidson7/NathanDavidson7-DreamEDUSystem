@@ -13,17 +13,18 @@
             <asp:TextBox ID="txtsID" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
             <br />
             sName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="sName" runat="server"></asp:TextBox>
+            <asp:TextBox ID="sName" runat="server" OnTextChanged="sName_TextChanged"></asp:TextBox>
             <br />
-            sAddress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sAddress" runat="server"></asp:TextBox>
+            sAddress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sAddress" runat="server" OnTextChanged="sAddress_TextChanged">
+</asp:TextBox>
             <br />
-            sTutorOrNot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sTutorOrNot" runat="server"></asp:TextBox>
+            sTutorOrNot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sTutorOrNot" runat="server" OnTextChanged="sTutorOrNot_TextChanged"></asp:TextBox>
             <br />
             sPhone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="sPhone" runat="server"></asp:TextBox>
+            <asp:TextBox ID="sPhone" runat="server" OnTextChanged="sPhone_TextChanged"></asp:TextBox>
             <br />
             sJoiningDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="sJoiningdate" runat="server"></asp:TextBox>
+            <asp:TextBox ID="sJoiningdate" runat="server" OnTextChanged="sJoiningdate_TextChanged"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="Button1" runat="server"  Text="OK" OnClick="Button1_Click" />
