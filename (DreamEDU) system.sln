@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DreamEDUFrontOffice", "DreamEDUFrontOffice\", "{52C8EE3D-1838-4720-8A62-41DE90BA773D}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{9deb2203-5a51-42ba-9dd8-43ee8c7b0cec}|DreamEDUClasses.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_14275"
 		Debug.AspNetCompiler.PhysicalPath = "DreamEDUFrontOffice\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14275\"
