@@ -8,81 +8,43 @@ using DreamEDUClasses;
 
 public partial class sStaff : System.Web.UI.Page
 {
+    private object txtsJoiningDate;
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
 
-    protected void btnOK_Click(object sender, EventArgs e)
-    {
-        
-    }
-
-    protected void TextBox1_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-
     protected void Button1_Click(object sender, EventArgs e)
     {
-        //create a new instance of a class
-        clsStaff aStaff = new clsStaff();
-        //capture the staffID
-        aStaff.sID = Convert.ToInt32(txtsID.Text);
-        //store the staffId in the session object
+
+
+    }
+
+    protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Button1_Click1(object sender, EventArgs e)
+    {
+        //create a new instance of class
+        clsstaff aStaff = new clsstaff();
+        //capture the staffId
+        aStaff.sID = Convert.ToInt32(sID.Text);
+        //capture the staff Name
+        aStaff.sName = sName.Text;
+        //capture the staff Address
+        aStaff.sAddress = sAddress.Text;
+        //capture whetherTutorOrNot
+        aStaff.sTutorOrNot = Yes.Checked;
+        //capture staffPhNo
+        aStaff.sPhone = sPhone.Text;
+        //capture staff joining date
+        aStaff.sJoiningDate = Convert.ToDateTime(sJoiningDate.Text);
+        //store the ID in the session object
         Session["aStaff"] = aStaff;
-        //redirect the viewer page
+        //redirect to viewerPage
         Response.Redirect("StaffViewer.aspx");
-    }
-
-    protected void sName_TextChanged(object sender, EventArgs e)
-    {
-        ////create new instance of clsStaff
-        //clsStaff aStaff = new clsStaff();
-        ////get the data from the session object
-        //aStaff = (clsStaff)Session["aStaff"];
-        ////display the staff number for this entry
-        //Response.Write(aStaff.sName);
-    }
-
-    protected void sAddress_TextChanged(object sender, EventArgs e)
-    {
-        ////create new instance of clsStaff
-        //clsStaff aStaff = new clsStaff();
-        ////get the data from the session object
-        //aStaff = (clsStaff)Session["aStaff"];
-        ////display the staff number for this entry
-        //Response.Write(aStaff.sAddress);
-    }
-
-    protected void sTutorOrNot_TextChanged(object sender, EventArgs e)
-    {
-        ////create new instance of clsStaff
-        //clsStaff aStaff = new clsStaff();
-        ////get the data from the session object
-        //aStaff = (clsStaff)Session["aStaff"];
-        ////display the staff number for this entry
-        //Response.Write(aStaff.sTutorOrNot);
-    }
-
-    protected void sPhone_TextChanged(object sender, EventArgs e)
-    {
-        ////create new instance of clsStaff
-        //clsStaff aStaff = new clsStaff();
-        ////get the data from the session object
-        //aStaff = (clsStaff)Session["aStaff"];
-        ////display the staff number for this entry
-        //Response.Write(aStaff.sPhNo);
-    }
-
-    protected void sJoiningdate_TextChanged(object sender, EventArgs e)
-    {
-        ////create new instance of clsStaff
-        //clsStaff aStaff = new clsStaff();
-        ////get the data from the session object
-        //aStaff = (clsStaff)Session["aStaff"];
-        ////display the staff number for this entry
-        //Response.Write(aStaff.sJoinD);
     }
 }
