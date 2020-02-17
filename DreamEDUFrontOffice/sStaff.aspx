@@ -8,27 +8,25 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="margin-left: 40px">
-            sID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtsID" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+        <div style="height: 362px">
+            sID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="sID" runat="server"></asp:TextBox>
             <br />
-            sName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="sName" runat="server" OnTextChanged="sName_TextChanged"></asp:TextBox>
+            sName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sName" runat="server"></asp:TextBox>
             <br />
-            sAddress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sAddress" runat="server" OnTextChanged="sAddress_TextChanged">
-</asp:TextBox>
+            sAddress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="sAddress" runat="server"></asp:TextBox>
             <br />
-            sTutorOrNot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sTutorOrNot" runat="server" OnTextChanged="sTutorOrNot_TextChanged"></asp:TextBox>
+            sTutorOrNot&nbsp;
+            <asp:CheckBox ID="Yes" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" />
             <br />
-            sPhone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="sPhone" runat="server" OnTextChanged="sPhone_TextChanged"></asp:TextBox>
+            sPhone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sPhone" runat="server"></asp:TextBox>
             <br />
-            sJoiningDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="sJoiningdate" runat="server" OnTextChanged="sJoiningdate_TextChanged"></asp:TextBox>
+            sJoiningdate&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="sJoiningDate" runat="server"></asp:TextBox>
             <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="OK" />
             <br />
-            <asp:Button ID="Button1" runat="server"  Text="OK" OnClick="Button1_Click" />
-            <asp:Button ID="Button2" runat="server" Text="Cancel" />
         </div>
     </form>
 </body>
