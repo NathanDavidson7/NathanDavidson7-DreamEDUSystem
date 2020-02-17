@@ -104,6 +104,174 @@ namespace DreamEDU_Testing
             Assert.AreEqual(aCourse.Available, TestData);
         }
 
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //Create some test data to use with the method
+            Int32 IDno = 1;
+            //invoke the method
+            Found = aCourse.Find(IDno);
+            //Test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestIDnoFound()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the methods
+            Int32 IDno = 21;
+            //invoke the method
+            Found = aCourse.Find(IDno);
+            //check the address no
+            if (aCourse.IDno != 21)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLiveDateFound()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the methods
+            Int32 IDno = 21;
+            //invoke the method
+            Found = aCourse.Find(IDno);
+            //check the address no
+            if (aCourse.LiveDate != Convert.ToDateTime("25/12/2022"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestTitleFound()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the methods
+            Int32 IDno = 21;
+            //invoke the method
+            Found = aCourse.Find(IDno);
+            //check the address no
+            if (aCourse.Title != "Title")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestTutorFound()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the methods
+            Int32 IDno = 21;
+            //invoke the method
+            Found = aCourse.Find(IDno);
+            //check the address no
+            if (aCourse.Tutor != "Tutor")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCategoryFound()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the methods
+            Int32 IDno = 21;
+            //invoke the method
+            Found = aCourse.Find(IDno);
+            //check the address no
+            if (aCourse.Category != "Category")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPriceFound()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the methods
+            Int32 IDno = 21;
+            //invoke the method
+            Found = aCourse.Find(IDno);
+            //check the address no
+            if (aCourse.Price != Convert.ToDecimal(77.77))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestAvailableFound()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the methods
+            Int32 IDno = 21;
+            //invoke the method
+            Found = aCourse.Find(IDno);
+            //check the address no
+            if (aCourse.Available != true)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
     }
 }
