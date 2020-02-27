@@ -123,16 +123,33 @@ namespace DreamEDUClasses
 
         public bool Find(int IDno)
         {
-            //set the private data members to the test data value
-            mIDno = 21;
-            mLiveDate = Convert.ToDateTime("25/12/2022");
-            mTitle = "Title";
-            mTutor = "Tutor";
-            mCategory = "Category";
-            mPrice = Convert.ToDecimal(77.77);
-            mAvailable = true;
-            //always return true
-            return true;
+            //create an instance if the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the IDno to search for
+            DB.AddParameter("@IDno", IDno);
+            //execute the stroed procedure
+            DB.Execute("sproc_Courses_FilterByIDno");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mIDno = Convert.ToInt32(DB.DataTable.Rows[0]["IDno"]);
+                mTitle = Convert.ToString(DB.DataTable.Rows[0]["Title"]);
+                mTutor = Convert.ToString(DB.DataTable.Rows[0]["Tutor"]);
+                mCategory = Convert.ToString(DB.DataTable.Rows[0]["Category"]);
+                mLiveDate = Convert.ToDateTime(DB.DataTable.Rows[0]["LiveDate"]);
+                mAvailable = Convert.ToBoolean(DB.DataTable.Rows[0]["Available"]);
+                mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
+                //return that everything worked OK
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+            
         }
 
         
