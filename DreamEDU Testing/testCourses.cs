@@ -151,12 +151,12 @@ namespace DreamEDU_Testing
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the methods
-            Int32 IDno = 21;
+            DateTime LiveDate = Convert.ToDateTime("01/01/2020");
             //DateTime LiveDate = 01/01/2020;
             //invoke the method
-            Found = aCourse.Find(IDno);
+            Found = aCourse.Find(1);
             //check the address no
-            if (aCourse.LiveDate != Convert.ToDateTime("01/01/2023"))
+            if (aCourse.LiveDate != Convert.ToDateTime("01/01/2020"))
             {
                 OK = false;
             }
@@ -174,10 +174,9 @@ namespace DreamEDU_Testing
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the methods
-            Int32 IDno = 21;
-            //String Title = Computing;
+            String Title = Convert.ToString("Computing");
             //invoke the method
-            Found = aCourse.Find(IDno);
+            Found = aCourse.Find(1);
             //check the address no
             if (aCourse.Title != "Computing")
             {
@@ -197,10 +196,9 @@ namespace DreamEDU_Testing
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the methods
-            Int32 IDno = 21;
-            //String Tutor = D; Lewis;
+            String Tutor = Convert.ToString("D Lewis");
             //invoke the method
-            Found = aCourse.Find(IDno);
+            Found = aCourse.Find(1);
             //check the address no
             if (aCourse.Tutor != "D Lewis")
             {
@@ -220,10 +218,9 @@ namespace DreamEDU_Testing
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the methods
-            Int32 IDno = 21;
-            //String Category = Technology;
+            String Category = Convert.ToString("Technology");
             //invoke the method
-            Found = aCourse.Find(IDno);
+            Found = aCourse.Find(1);
             //check the address no
             if (aCourse.Category != "Technology")
             {
@@ -243,12 +240,11 @@ namespace DreamEDU_Testing
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the methods
-            Int32 IDno = 21;
-            //Decimal Price = 99;
+            Decimal Price = Convert.ToDecimal(200.00);
             //invoke the method
-            Found = aCourse.Find(IDno);
+            Found = aCourse.Find(1);
             //check the address no
-            if (aCourse.Price != Convert.ToDecimal(99.00))
+            if (aCourse.Price != Convert.ToDecimal(200.00))
             {
                 OK = false;
             }
@@ -266,10 +262,9 @@ namespace DreamEDU_Testing
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the methods
-            Int32 IDno = 21;
-            //Boolean Available = true;
+            Boolean Available = Convert.ToBoolean(true);
             //invoke the method
-            Found = aCourse.Find(IDno);
+            Found = aCourse.Find(1);
             //check the address no
             if (aCourse.Available != true)
             {
