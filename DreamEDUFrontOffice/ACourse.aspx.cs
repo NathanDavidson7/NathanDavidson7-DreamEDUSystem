@@ -24,7 +24,7 @@ public partial class ACourse : System.Web.UI.Page
         //create a new instance of clsCourses
         clsCourses aCourse = new clsCourses();
         //capture the CourseID
-        aCourse.IDno =Convert.ToInt32( txtIDCourse.Text);
+        aCourse.IDno =Convert.ToInt32( txtIDno.Text);
         //capture the CourseTitle
         aCourse.Title = txtTitleCourse.Text;
         //capture the  courseCategory
@@ -50,25 +50,32 @@ public partial class ACourse : System.Web.UI.Page
         //variable to store the primary key
         Int32 IDno;
         //variable to store the result of the find operation
-        Boolean Found = false;
+        Boolean Found=false;
         //get the primary key entered by the user
-        IDno = Convert.ToInt32(txtIDno.Text);
+        IDno =Convert.ToInt32( txtIDno.Text);
         //find the record
+        Found = aCourse.Find(IDno);
+        //if found
         if (Found == true)
         {
             //display the values of the properties in the form
-            //txtIDCourse.Text = aCourse.IDno;
-            //txtTitleCourse.Text = aCourse.Title;
-            //txtCategoryCourse.Text = aCourse.Category;
-            //txtTutorCourse.Text = aCourse.Tutor;
-            //txtLiveDateCourse.Text = aCourse.LiveDate;
-            //Available.Text = aCourse.Available;
-            //txtpriceCourse.Text = aCourse.Price;
+            //txtIDno.Text = aCourse.IDno;
+            txtTitleCourse.Text = aCourse.Title;
+            txtCategoryCourse.Text = aCourse.Category;
+            txtTutorCourse.Text = aCourse.Tutor;
+            txtLiveDateCourse.Text = aCourse.LiveDate.ToString();
+            Available.Text = aCourse.Available.ToString();
+            txtpriceCourse.Text = aCourse.Price.ToString();
 
         }
     }
 
     protected void TextBox2_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void txtIDno_TextChanged(object sender, EventArgs e)
     {
 
     }

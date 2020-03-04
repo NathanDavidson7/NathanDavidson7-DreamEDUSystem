@@ -10,11 +10,9 @@
     <form id="form1" runat="server">
         <div>
             &nbsp;IDno&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtIDno" runat="server" style="margin-left: 2px" Width="50px"></asp:TextBox>
+            <asp:TextBox ID="txtIDno" runat="server"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Find" runat="server" OnClick="Button1_Click" Text="Find" Width="71px" />
-            <br />
-            ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <asp:TextBox ID="txtIDCourse" runat="server" style="margin-left: 2px" Width="197px"></asp:TextBox>
             <br />
             Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:TextBox ID="txtTitleCourse" runat="server" style="margin-left: 0px" Width="197px" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
             <br />
