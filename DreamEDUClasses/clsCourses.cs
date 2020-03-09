@@ -152,6 +152,28 @@ namespace DreamEDUClasses
             
         }
 
+        //function for the public validation method
+        public string Valid(string Title,
+                            string Category,
+                            string Tutor,
+                            string LiveDate,
+                            string Price)
+            ///this function accepts 5 parameters for vaidation
+            ///the function returns a string containing any error message
+            ///if no errors found then a blank string is returned
+        {
+            //create a string variable to store the error
+            String Error = "";
+            //if the Title is blank
+            if (Title.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Title may not be blank : ";
+            }
+            //return any error messages
+            return Error;
+        }
+
         
     }
 }
