@@ -59,7 +59,7 @@ public partial class ACourse : System.Web.UI.Page
         if (Found == true)
         {
             //display the values of the properties in the form
-            //txtIDno.Text = aCourse.IDno;
+            txtIDno.Text = aCourse.IDno.ToString();
             txtTitleCourse.Text = aCourse.Title;
             txtCategoryCourse.Text = aCourse.Category;
             txtTutorCourse.Text = aCourse.Tutor;

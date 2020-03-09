@@ -12,7 +12,7 @@
             &nbsp;IDno&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtIDno" runat="server"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Find" runat="server" OnClick="Button1_Click" Text="Find" Width="71px" />
+            <asp:Button ID="Find" runat="server" OnClick="Find_Click" Text="Find" Width="71px" />
             <br />
             Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:TextBox ID="txtTitleCourse" runat="server" style="margin-left: 0px" Width="197px" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
             <br />
