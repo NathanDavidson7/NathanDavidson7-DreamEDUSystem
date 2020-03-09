@@ -7,6 +7,13 @@ namespace DreamEDU_Testing
     [TestClass]
     public class testCourses
     {
+        //good test data
+        //create some test data to pass to the method
+        string Title = "Computing";
+        string Category = "Technology";
+        string Tutor = "D Lewis";
+        string LiveDate = DateTime.Now.Date.ToString();
+        string Price = "200";
         [TestMethod]
         public void InstanceOK()
         {
@@ -117,6 +124,19 @@ namespace DreamEDU_Testing
             Found = aCourse.Find(IDno);
             //Test to see that the result is correct
             Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -272,6 +292,21 @@ namespace DreamEDU_Testing
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TitleMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Title = "";//this should trigger an error
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
         }
 
     }
