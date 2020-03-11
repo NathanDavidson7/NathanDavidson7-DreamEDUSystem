@@ -294,6 +294,7 @@ namespace DreamEDU_Testing
             Assert.IsTrue(OK);
         }
 
+        //TITLE VALIDATION TESTS!
         [TestMethod]
         public void TitleMinLessOne()
         {
@@ -309,5 +310,229 @@ namespace DreamEDU_Testing
             Assert.AreNotEqual(Error, "");
         }
 
+        [TestMethod]
+        public void TitleMin()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Title = "a";//this should be ok
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Title = "aa";//this should be ok
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Title = "aaaaaaaaaaaaaaaaaaa";//this should be ok
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMax()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Title = "aaaaaaaaaaaaaaaaaaaa";//this should be ok
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMid()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Title = "aaaaaaaaaa";//this should be ok
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Title = "aaaaaaaaaaaaaaaaaaaaa";//this should fail
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Title = "";
+            Title = Title.PadRight(500, 'a');//this should fail
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        //LiveDate VALIDATION TESTS!
+        [TestMethod]
+        public void LiveDateExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 100 years
+            TestDate = TestDate.AddYears(-100);
+            //convert the date variable to a string variable
+            string LiveDate = TestDate.ToString();
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LiveDateMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 100 years
+            TestDate = TestDate.AddDays(-1);
+            //convert the date variable to a string variable
+            string LiveDate = TestDate.ToString();
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LiveDateMin()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //convert the date variable to a string variable
+            string LiveDate = TestDate.ToString();
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LiveDateMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 100 years
+            TestDate = TestDate.AddDays(1);
+            //convert the date variable to a string variable
+            string LiveDate = TestDate.ToString();
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LiveDateExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 100 years
+            TestDate = TestDate.AddYears(100);
+            //convert the date variable to a string variable
+            string LiveDate = TestDate.ToString();
+            //invoke the method
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LiveDateInvalidData()
+        {
+            //create an instance of the class we want to create
+            clsCourses aCourse = new clsCourses();
+            //string variable to store any error message
+            String Error = "";
+            //set the LiveDate to a non date value
+            string LiveDate = "this is not a date!";
+            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
     }
 }

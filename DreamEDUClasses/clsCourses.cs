@@ -106,6 +106,9 @@ namespace DreamEDUClasses
 
         //Price private member variable
         private Decimal mPrice;
+        
+
+
         //Price public property
         public Decimal Price
         {
@@ -164,11 +167,40 @@ namespace DreamEDUClasses
         {
             //create a string variable to store the error
             String Error = "";
+            //create a temporary variable to store date values
+            DateTime DateTemp;
             //if the Title is blank
             if (Title.Length == 0)
             {
                 //record the error
                 Error = Error + "The Title may not be blank : ";
+            }
+            //if the Title is greater than 20 characters
+            if (Title.Length > 20)
+            {
+                //record the error
+                Error = Error + "The Title must be less 20 characters or less";
+            }
+            try
+            {
+                //copy the dateAdded value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(LiveDate);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error 
+                    Error = Error + "The date cannot be in the past :";
+                }
+                //check to see if the date is greater than today's date
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannit be in the future :";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The date was not a valid date : ";
             }
             //return any error messages
             return Error;
