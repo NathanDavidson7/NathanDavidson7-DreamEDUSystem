@@ -228,19 +228,28 @@ namespace DreamEDUClasses
                 //record the error
                 Error = Error + "The date was not a valid date : ";
             }
-            //copy the Price value to the DecimalTemp variable
-            DecimalTemp = Convert.ToDecimal(Price);
-            // if the Price is less than zero
-            if (DecimalTemp < 00.00m)
+            try
             {
-                //record the error
-                Error = Error + "The price cannot be a negative value : ";
+                //copy the Price value to the DecimalTemp variable
+                DecimalTemp = Convert.ToDecimal(Price);
+                // if the Price is less than zero
+                if (DecimalTemp < 00.00m)
+                {
+                    //record the error
+                    Error = Error + "The price cannot be a negative value : ";
+                }
+
+                // if the price is more than maximum decimal value
+                if (DecimalTemp > Decimal.MaxValue)
+                {
+                    //record the error
+                    Error = Error + "The price has exceeded the maximum value : ";
+                }
             }
-            // if the price is more than 10thousand
-            if (DecimalTemp > 10000.00m)
+            catch
             {
                 //record the error
-                Error = Error + "The price has exceeded the maximum value : ";
+                Error = Error + "Price was not a valid decimal value : ";
             }
             //return any error messages
             return Error;
