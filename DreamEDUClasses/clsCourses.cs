@@ -169,6 +169,8 @@ namespace DreamEDUClasses
             String Error = "";
             //create a temporary variable to store date values
             DateTime DateTemp;
+            //create a temporary variable to store decimal values
+            Decimal DecimalTemp;
             //if the Title is blank
             if (Title.Length == 0)
             {
@@ -180,6 +182,30 @@ namespace DreamEDUClasses
             {
                 //record the error
                 Error = Error + "The Title must be less 20 characters or less";
+            }
+            //if the Category is blank
+            if (Category.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Category may not be blank : ";
+            }
+            //if the Category is greater than 20 characters
+            if (Category.Length > 20)
+            {
+                //record the error
+                Error = Error + "The Category must be less 20 characters or less";
+            }
+            //if the Tutor is blank
+            if (Tutor.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Tutor may not be blank : ";
+            }
+            //if the Tutor is greater than 25 characters
+            if (Tutor.Length > 25)
+            {
+                //record the error
+                Error = Error + "The Tutor must be less 20 characters or less";
             }
             try
             {
@@ -194,13 +220,27 @@ namespace DreamEDUClasses
                 if (DateTemp > DateTime.Now.Date)
                 {
                     //record the error
-                    Error = Error + "The date cannit be in the future :";
+                    Error = Error + "The date cannot be in the future :";
                 }
             }
             catch
             {
                 //record the error
                 Error = Error + "The date was not a valid date : ";
+            }
+            //copy the Price value to the DecimalTemp variable
+            DecimalTemp = Convert.ToDecimal(Price);
+            // if the Price is less than zero
+            if (DecimalTemp < 00.00m)
+            {
+                //record the error
+                Error = Error + "The price cannot be a negative value : ";
+            }
+            // if the price is more than 10thousand
+            if (DecimalTemp > 10000.00m)
+            {
+                //record the error
+                Error = Error + "The price has exceeded the maximum value : ";
             }
             //return any error messages
             return Error;
