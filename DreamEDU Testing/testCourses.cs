@@ -788,28 +788,6 @@ namespace DreamEDU_Testing
         }
 
         [TestMethod]
-        public void PriceMinLessOne()
-        {
-            //create an instance of the class we want to create
-            clsCourses aCourse = new clsCourses();
-            //string variable to store any error message
-            String Error = "";
-            //create a variable to store the test date data
-            Decimal TestPrice;
-            //set TestPrice to a value
-            TestPrice = 00.00m;
-            //change price to -00.01
-            TestPrice = -01.00m;
-            //convert the decimal variable to a string variable
-            string Price = TestPrice.ToString();
-            //invoke the method
-            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
-            //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-
-        }
-
-        [TestMethod]
         public void PriceMin()
         {
             //create an instance of the class we want to create
@@ -862,8 +840,8 @@ namespace DreamEDU_Testing
             Decimal TestPrice;
             //set TestPrice to a value
             TestPrice = 00.00m;
-            //change price to 10000.00
-            TestPrice = 10000.00m;
+            //change price to max value of decimal
+            TestPrice = Decimal.MaxValue;
             //convert the decimal variable to a string variable
             string Price = TestPrice.ToString();
             //invoke the method
@@ -874,48 +852,20 @@ namespace DreamEDU_Testing
         }
 
         [TestMethod]
-        public void PriceMaxPlusOne()
+        public void PriceInvalidData()
         {
             //create an instance of the class we want to create
             clsCourses aCourse = new clsCourses();
             //string variable to store any error message
             String Error = "";
-            //create a variable to store the test date data
-            Decimal TestPrice;
-            //set TestPrice to a value
-            TestPrice = 00.00m;
-            //change price to 10000.01
-            TestPrice = 10000.01m;
-            //convert the decimal variable to a string variable
-            string Price = TestPrice.ToString();
-            //invoke the method
+            //set the LiveDate to a non date value
+            string Price = "this is not a decimal!";
             Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
 
         }
 
-        [TestMethod]
-        public void PriceExtremeMax()
-        {
-            //create an instance of the class we want to create
-            clsCourses aCourse = new clsCourses();
-            //string variable to store any error message
-            String Error = "";
-            //create a variable to store the test date data
-            Decimal TestPrice;
-            //set TestPrice to a value
-            TestPrice = 00.00m;
-            //change price to 9999999.99
-            TestPrice = 9999999.99m;
-            //convert the decimal variable to a string variable
-            string Price = TestPrice.ToString();
-            //invoke the method
-            Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
-            //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-
-        }
 
     }
 }
