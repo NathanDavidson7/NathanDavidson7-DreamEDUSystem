@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+ HimanshusBranch
     <Compile Include="clsCourses.cs" />
     <Compile Include="FindMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,8 +61,11 @@
     <Compile Include="TestStaffID.cs" />
     <Compile Include="TitleCourse.cs" />
     <Compile Include="CategoryCourse.cs" />
+
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="testCourses.cs" />
+ master
     <Compile Include="tstStaff.cs" />
-    <Compile Include="TutorCourse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
