@@ -11,6 +11,8 @@
         <div style="height: 362px">
             sID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="sID" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button2" runat="server" Text="Find" />
             <br />
             sName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sName" runat="server"></asp:TextBox>
             <br />

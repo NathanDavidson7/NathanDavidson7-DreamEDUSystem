@@ -76,9 +76,9 @@ namespace DreamEDU_Testing
             //create some test data to assign 
             string TestData = "1234567890";
             //assign data 
-            astaff.sPhNo= TestData;
+            astaff.sPhone= TestData;
             //test to see that two values are the same
-            Assert.AreEqual(astaff.sPhNo, TestData);
+            Assert.AreEqual(astaff.sPhone, TestData);
         }
 
         [TestMethod]
