@@ -8,16 +8,10 @@ using DreamEDUClasses;
 
 public partial class sStaff : System.Web.UI.Page
 {
-    private object txtsJoiningDate;
+    
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
-    }
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-
 
     }
 
@@ -29,7 +23,7 @@ public partial class sStaff : System.Web.UI.Page
     protected void Button1_Click1(object sender, EventArgs e)
     {
         //create a new instance of class
-        clsstaff aStaff = new clsstaff();
+        clsStaff aStaff = new clsStaff();
         //capture the staffId
         aStaff.sID = Convert.ToInt32(sID.Text);
         //capture the staff Name
@@ -41,10 +35,37 @@ public partial class sStaff : System.Web.UI.Page
         //capture staffPhNo
         aStaff.sPhone = sPhone.Text;
         //capture staff joining date
-        aStaff.sJoiningDate = Convert.ToDateTime(sJoiningDate.Text);
+        aStaff.sJoinD = Convert.ToDateTime(sJoiningDate.Text);
         //store the ID in the session object
         Session["aStaff"] = aStaff;
         //redirect to viewerPage
         Response.Redirect("StaffViewer.aspx");
     }
+
+
+    protected void btnFind_Click(object sender, EventArgs e)
+    {
+        //create a new instance of class
+        clsStaff aStaff = new clsStaff();
+        //variable to store the primary key
+        Int32 vsID;
+        //variable to store the result of the find operation
+        Boolean Found = false;
+        //get the primary key entered by the user
+        vsID = Convert.ToInt32(sID.Text);
+        //find the record
+        Found = aStaff.Find(vsID);
+        //if Found
+        if (Found == true)
+        {
+            //dispay the values of the staff in the form
+            sID.Text = aStaff.sID.ToString();
+            sName.Text = aStaff.sName;
+            sAddress.Text = aStaff.sAddress;
+            sJoiningDate.Text = aStaff.sJoinD.ToString();
+            Yes.Text = aStaff.sTutorOrNot.ToString();
+            sPhone.Text = aStaff.sPhone;
+        }
+    }
+
 }
