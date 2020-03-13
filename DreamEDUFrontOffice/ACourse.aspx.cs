@@ -23,24 +23,45 @@ public partial class ACourse : System.Web.UI.Page
     {
         //create a new instance of clsCourses
         clsCourses aCourse = new clsCourses();
-        //capture the CourseID
-        aCourse.IDno =Convert.ToInt32( txtIDno.Text);
         //capture the CourseTitle
-        aCourse.Title = txtTitleCourse.Text;
+        string Title = txtTitleCourse.Text;
         //capture the  courseCategory
-        aCourse.Category = txtCategoryCourse.Text;
+        string Category = txtCategoryCourse.Text;
         //capture the  courseTutor
-        aCourse.Tutor = txtTutorCourse.Text;
+        string Tutor = txtTutorCourse.Text;
         //capture the courseLiveDate
-        aCourse.LiveDate = Convert.ToDateTime(txtLiveDateCourse.Text);
+        string LiveDate = txtLiveDateCourse.Text;
         //capture the availableCourse
         aCourse.Available = Available.Checked;
         //capture the coursePrice
-        aCourse.Price = Convert.ToDecimal(txtpriceCourse.Text);
-        //store the ID in the session object
-        Session["aCourse"] = aCourse;
-        //redirect to the viewer page
-        Response.Redirect("CourseViewer.aspx");
+         string Price = txtpriceCourse.Text;
+        //variable to store any error messages
+        string Error = "";
+        //validate the data
+        Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
+        if (Error == "")
+        {
+            //capture the Title
+            aCourse.Title = Title;
+            //capture the Category
+            aCourse.Category = Category;
+            //capture the Tutor
+            aCourse.Tutor = Tutor;
+            //capture the LiveDate
+            aCourse.LiveDate = Convert.ToDateTime(LiveDate);
+            //capture the Price
+            aCourse.Price = Convert.ToDecimal(Price);
+            //store the ID in the session object
+            Session["aCourse"] = aCourse;
+            //redirect to the viewer page
+            Response.Write("CourseViewer.aspx");
+        }
+        else
+        {
+            //display the error message
+            lblError.Text = Error;
+        }
+        
     }
 
     protected void Find_Click(object sender, EventArgs e)
