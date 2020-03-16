@@ -15,8 +15,7 @@ namespace DreamEDU_Testing
             //test to see that it exists
             Assert.IsNotNull(sStaff);
         }
- HimanshusBranch
-
+ 
         [TestMethod]
         public void staffIDOK()
         {
@@ -94,6 +93,5 @@ namespace DreamEDU_Testing
             //test to see that two values are the same
             Assert.AreEqual(astaff.sJoinD, TestData);
         }
- master
-    }
+     }
 }

@@ -21,6 +21,7 @@ public partial class ACourse : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
+        lblError.Text = "";
         //create a new instance of clsCourses
         clsCourses aCourse = new clsCourses();
         //capture the CourseTitle
