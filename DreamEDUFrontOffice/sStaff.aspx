@@ -20,11 +20,11 @@
             <asp:TextBox ID="sAddress" runat="server"></asp:TextBox>
             <br />
             sTutorOrNot&nbsp;
-            <asp:CheckBox ID="Yes" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" />
+            <asp:CheckBox ID="Yes" runat="server"  />
             <br />
             sPhone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sPhone" runat="server"></asp:TextBox>
             <br />
-            sJoiningdate&nbsp;&nbsp;&nbsp;
+            sJoiningDate&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="sJoiningDate" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="OK" />

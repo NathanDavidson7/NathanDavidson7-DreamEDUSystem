@@ -6,19 +6,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DreamEDUClasses;
 
+
 public partial class sStaff : System.Web.UI.Page
 {
-    
+
 
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
 
-    protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-    {
-
-    }
 
     protected void Button1_Click1(object sender, EventArgs e)
     {
@@ -42,8 +39,7 @@ public partial class sStaff : System.Web.UI.Page
         Response.Redirect("StaffViewer.aspx");
     }
 
-
-    protected void btnFind_Click(object sender, EventArgs e)
+    protected void btnFind_Click1(object sender, EventArgs e)
     {
         //create a new instance of class
         clsStaff aStaff = new clsStaff();
@@ -67,5 +63,4 @@ public partial class sStaff : System.Web.UI.Page
             sPhone.Text = aStaff.sPhone;
         }
     }
-
 }
