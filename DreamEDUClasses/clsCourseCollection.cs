@@ -6,32 +6,37 @@ namespace DreamEDUClasses
 {
     public class clsCourseCollection
     {
+        //constructor for the class
         public clsCourseCollection()
         {
-            //create the items of test data
-            clsCourses TestItem = new clsCourses();
-            //set its properties 
-            TestItem.Available = true;
-            TestItem.IDno = 1;
-            TestItem.Title = "Computing";
-            TestItem.Category = "Technology";
-            TestItem.Tutor = "D Lewis";
-            TestItem.LiveDate = DateTime.Now.Date;
-            TestItem.Price = 200;
-            //add the item to the test list
-            mCourseList.Add(TestItem);
-            //re initialise the object for some new data
-            TestItem = new clsCourses();
-            //set its properties
-            TestItem.Available = true;
-            TestItem.IDno = 2;
-            TestItem.Title = "Climate Solutions";
-            TestItem.Category = "Science";
-            TestItem.Tutor = "A Armstrong";
-            TestItem.LiveDate = DateTime.Now.Date;
-            TestItem.Price = 179;
-            //add the item to the test list
-            mCourseList.Add(TestItem);
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount = 0;
+            //object for data connection
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stroed procedure
+            DB.Execute("Courses_SelectAll");
+            //get the count of records
+            RecordCount = DB.Count;
+            //While there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank address
+                clsCourses aCourse = new clsCourses();
+                //read in the fields from the current record
+                aCourse.Available = Convert.ToBoolean(DB.DataTable.Rows[Index]["Available"]);
+                aCourse.IDno = Convert.ToInt32(DB.DataTable.Rows[Index]["IDno"]);
+                aCourse.Title = Convert.ToString(DB.DataTable.Rows[Index]["Title"]);
+                aCourse.Category = Convert.ToString(DB.DataTable.Rows[Index]["Category"]);
+                aCourse.Tutor = Convert.ToString(DB.DataTable.Rows[Index]["Tutor"]);
+                aCourse.LiveDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["LiveDate"]);
+                aCourse.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
+                //add the record to the private data member
+                mCourseList.Add(aCourse);
+                //point at the next record
+                Index++;
+            }
 
         }
 
