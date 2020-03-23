@@ -50,18 +50,6 @@ namespace DreamEDU_Testing
 
         }
 
-        [TestMethod]
-        public void CountCourseOK()
-        {
-            //Create an instance of the class we want to create
-            clsCourseCollection AllCourses = new clsCourseCollection();
-            //create some test data to assign to the property
-            Int32 SomeCount = 2;
-            //assign the data to the property
-            AllCourses.Count = SomeCount;
-            //test to see that the two values are the same
-            Assert.AreEqual(AllCourses.Count, SomeCount);
-        }
 
         [TestMethod]
         public void ThisCoursePropertyOK()
@@ -112,14 +100,6 @@ namespace DreamEDU_Testing
             Assert.AreEqual(AllCourses.Count, TestList.Count);
         }
 
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            //Create an instance of the class we want to create
-            clsCourseCollection AllCourses = new clsCourseCollection();
-            //test to see that the two values are the same
-            Assert.AreEqual(AllCourses.Count, 2);
-        }
     }
     
 }
