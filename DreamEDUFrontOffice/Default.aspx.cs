@@ -14,20 +14,21 @@ public partial class _Default : System.Web.UI.Page
         if (IsPostBack == false)
         {
             //update the list box
-           /* DisplayCourses();
+           DisplayCourses();
         }
     }
-}
-void DisplayCourses()
-{
-    //create an instance of the collection
-    Class_Library.clsCourseCollection Courses = new Class_Library.clsCourseCollection();
-    //set the data source to the list of courses in the collection
-    lstCourses.DataSource = Courses.CourseList;
-    //set the name of the primary key
-    lstCourses.DataValueField = "IDno";
-    //set the data field to display
-    lstCourses.DataTextField = "Title";
-    //bind the data to the list
-    lstCourses.DataBind();*/
+
+    void DisplayCourses()
+    {
+        //create an instance of the collection
+        DreamEDUClasses.clsCourseCollection Courses = new DreamEDUClasses.clsCourseCollection();
+        //set the data source to the list of courses in the collection
+        lstCourses.DataSource = Courses.CourseList;
+        //set the name of the primary key
+        lstCourses.DataValueField = "IDno";
+        //set the data field to display
+        lstCourses.DataTextField = "Title";
+        //bind the data to the list
+        lstCourses.DataBind();
+    }
 }
