@@ -31,4 +31,9 @@ public partial class _Default : System.Web.UI.Page
         //bind the data to the list
         lstCourses.DataBind();
     }
+
+    protected void lstCourses_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

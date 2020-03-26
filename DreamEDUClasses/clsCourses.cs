@@ -122,7 +122,7 @@ namespace DreamEDUClasses
             }
         }
 
-        
+        public clsCourses ThisCourse { get; set; }
 
         public bool Find(int IDno)
         {
