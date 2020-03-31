@@ -101,5 +101,16 @@ namespace DreamEDUClasses
             //execute the query returning the primary key value
             return DB.Execute("sproc_Courses_Insert");
         }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by ThisCourse
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@IDno", mThisCourse.IDno);
+            //execute the stored procedure
+            DB.Execute("sproc_Courses_Delete");
+        }
     }
 }

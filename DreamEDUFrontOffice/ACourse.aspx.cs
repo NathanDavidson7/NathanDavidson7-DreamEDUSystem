@@ -9,6 +9,8 @@ using System.Web.UI.WebControls;
 
 public partial class ACourse : System.Web.UI.Page
 {
+    public object chkAvailable { get; private set; }
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -32,8 +34,6 @@ public partial class ACourse : System.Web.UI.Page
         string Tutor = txtTutorCourse.Text;
         //capture the courseLiveDate
         string LiveDate = txtLiveDateCourse.Text;
-        //capture the availableCourse
-        aCourse.Available = Available.Checked;
         //capture the coursePrice
          string Price = txtpriceCourse.Text;
         //variable to store any error messages
@@ -52,10 +52,16 @@ public partial class ACourse : System.Web.UI.Page
             aCourse.LiveDate = Convert.ToDateTime(LiveDate);
             //capture the Price
             aCourse.Price = Convert.ToDecimal(Price);
-            //store the ID in the session object
-            Session["aCourse"] = aCourse;
-            //redirect to the viewer page
-            Response.Write("CourseViewer.aspx");
+            //capture Available
+            aCourse.Available = Available.Checked;
+            //create a new instance of the address collection
+            clsCourseCollection courseList = new clsCourseCollection();
+            //set the ThisCourse property
+            courseList.ThisCourse = aCourse;
+            //add the new record
+            courseList.Add();
+            //redirect back to the listpage
+            Response.Redirect("CourseList.aspx");
         }
         else
         {
