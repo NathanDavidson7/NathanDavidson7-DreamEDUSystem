@@ -9,7 +9,26 @@ public partial class CourseList : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //if this is the first time the page is displayed
+        if (IsPostBack == false)
+        {
+            //update the list box
+            DisplayCourses();
+        }
+    }
 
+    void DisplayCourses()
+    {
+        //create an instance of the collection
+        DreamEDUClasses.clsCourseCollection Courses = new DreamEDUClasses.clsCourseCollection();
+        //set the data source to the list of courses in the collection
+        lstCourseList.DataSource = Courses.CourseList;
+        //set the name of the primary key
+        lstCourseList.DataValueField = "IDno";
+        //set the data field to display
+        lstCourseList.DataTextField = "Title";
+        //bind the data to the list
+        lstCourseList.DataBind();
     }
 
     protected void btnAdd_Click(object sender, EventArgs e)
