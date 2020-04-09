@@ -162,6 +162,47 @@ namespace DreamEDU_Testing
             Assert.IsFalse(Found);
         }
 
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //Create an instance of the class we want to create
+            clsCourseCollection AllCourses = new clsCourseCollection();
+            //create the item of test data
+            clsCourses TestItem = new clsCourses();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties 
+            TestItem.Available = true;
+            TestItem.IDno = 1;
+            TestItem.Title = "Web Development";
+            TestItem.Category = "Technology";
+            TestItem.Tutor = "R Sunderland";
+            TestItem.LiveDate = DateTime.Now.Date;
+            TestItem.Price = 180;
+            //set ThisCourse to the test data
+            AllCourses.ThisCourse = TestItem;
+            //add the record
+            PrimaryKey = AllCourses.Add();
+            //set the primary key of the test data
+            TestItem.IDno = PrimaryKey;
+            //modify the test data
+            TestItem.Available = false;
+            TestItem.IDno = 11;
+            TestItem.Title = "Front-end Web Development";
+            TestItem.Category = "Technology";
+            TestItem.Tutor = "S Sunderland";
+            TestItem.LiveDate = DateTime.Now.Date;
+            TestItem.Price = 150;
+            //set the record based on the new test data
+            AllCourses.ThisCourse = TestItem;
+            //update the record
+            AllCourses.Update();
+            //find the record
+            AllCourses.ThisCourse.Find(PrimaryKey);
+            //test to see ThisCourse matches the test data
+            Assert.AreEqual(AllCourses.ThisCourse, TestItem);
+        }
+
     }
     
 }

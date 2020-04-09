@@ -112,5 +112,22 @@ namespace DreamEDUClasses
             //execute the stored procedure
             DB.Execute("sproc_Courses_Delete");
         }
+
+        public void Update()
+        {
+            //update an existing record based on the values of thisCourse
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters of the stored procedure
+            DB.AddParameter("@IDno",  mThisCourse.IDno);
+            DB.AddParameter("@Title", mThisCourse.Title);
+            DB.AddParameter("@Category", mThisCourse.Category);
+            DB.AddParameter("@Tutor", mThisCourse.Tutor);
+            DB.AddParameter("@LiveDate", mThisCourse.LiveDate);
+            DB.AddParameter("@Available", mThisCourse.Available);
+            DB.AddParameter("@Price", mThisCourse.Price);
+            //execute the stored procedure
+            DB.Execute("sproc_Courses_Update");
+        }
     }
 }
