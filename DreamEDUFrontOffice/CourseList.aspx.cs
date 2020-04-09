@@ -59,4 +59,25 @@ public partial class CourseList : System.Web.UI.Page
             lblError.Text = "Please select a record to delete from the list";
         }
     }
+
+    protected void btnEdit_Click(object sender, EventArgs e)
+    {
+        //var to store the primary key value of the record to be edited
+        Int32 IDno;
+        //if a record has been selected from the list
+        if (lstCourseList.SelectedIndex != -1)
+        {
+            //get the primary key value of the record to edit
+            IDno = Convert.ToInt32(lstCourseList.SelectedValue);
+            //store the data in the session object
+            Session["IDno"] = IDno;
+            //redirect to the edit page
+            Response.Redirect("ACourse.aspx");
+        }
+        else//if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a record to delete from the list";
+        }
+    }
 }

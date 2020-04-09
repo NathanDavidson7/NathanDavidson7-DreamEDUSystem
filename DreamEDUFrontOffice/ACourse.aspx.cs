@@ -9,11 +9,23 @@ using System.Web.UI.WebControls;
 
 public partial class ACourse : System.Web.UI.Page
 {
+    //variable to store the primary key with page level scope
+    Int32 IDno;
     public object chkAvailable { get; private set; }
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //get the number of the course to be processed
+        IDno = Convert.ToInt32(Session["IDno"]);
+        if (IsPostBack == false)
+        {
+            //if this is not a new record
+            if (IDno != -1)
+            {
+                //display the current data for the record
+                DisplayCourses();
+            }
+        }
     }
 
     protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
@@ -42,6 +54,8 @@ public partial class ACourse : System.Web.UI.Page
         Error = aCourse.Valid(Title, Category, Tutor, LiveDate, Price);
         if (Error == "")
         {
+            //capture the IDno
+            aCourse.IDno = IDno;
             //capture the Title
             aCourse.Title = Title;
             //capture the Category
@@ -56,10 +70,25 @@ public partial class ACourse : System.Web.UI.Page
             aCourse.Available = Available.Checked;
             //create a new instance of the address collection
             clsCourseCollection courseList = new clsCourseCollection();
-            //set the ThisCourse property
-            courseList.ThisCourse = aCourse;
-            //add the new record
-            courseList.Add();
+
+            //if this is a new record i.e IDno = -1 then add the data
+            if (IDno == -1)
+            {
+                //set the ThisCourse property
+                courseList.ThisCourse = aCourse;
+                //add the new record
+                courseList.Add();
+            }
+            //otherwise it must be an update
+            else
+            {
+                //find the record to update
+                courseList.ThisCourse.Find(IDno);
+                //set the ThisCourse property
+                courseList.ThisCourse = aCourse;
+                //update the record
+                courseList.Update();
+            }
             //redirect back to the listpage
             Response.Redirect("CourseList.aspx");
         }
@@ -105,6 +134,23 @@ public partial class ACourse : System.Web.UI.Page
 
     protected void txtIDno_TextChanged(object sender, EventArgs e)
     {
+
+    }
+
+    void DisplayCourses()
+    {
+        //create and instance of the Courses
+        clsCourseCollection Courses = new clsCourseCollection();
+        //find the record to update
+        Courses.ThisCourse.Find(IDno);
+        //display the data for this record
+        txtIDno.Text = Courses.ThisCourse.IDno.ToString();
+        txtTitleCourse.Text = Courses.ThisCourse.Title;
+        txtCategoryCourse.Text = Courses.ThisCourse.Category;
+        txtTutorCourse.Text = Courses.ThisCourse.Tutor;
+        txtLiveDateCourse.Text = Courses.ThisCourse.LiveDate.ToString();
+        Available.Checked = Courses.ThisCourse.Available;
+        txtpriceCourse.Text = Courses.ThisCourse.Price.ToString();
 
     }
 }
