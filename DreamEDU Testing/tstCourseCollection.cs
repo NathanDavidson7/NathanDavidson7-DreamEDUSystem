@@ -203,6 +203,62 @@ namespace DreamEDU_Testing
             Assert.AreEqual(AllCourses.ThisCourse, TestItem);
         }
 
+        [TestMethod]
+        public void ReportByCategoryMethodOK()
+        {
+            //create an instance of the class containing unfiltered results
+            clsCourseCollection AllCourses = new clsCourseCollection();
+            //create an instance of the filtered data
+            clsCourseCollection FilteredCourses = new clsCourseCollection();
+            //apply a blank string (should return all records);
+            FilteredCourses.ReportByCategory("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllCourses.Count, FilteredCourses.Count);
+            
+        }
+
+        [TestMethod]
+        public void ReportByCategoryNoneFound()
+        {
+            //create an instance of the filtered data
+            clsCourseCollection FilteredCourses = new clsCourseCollection();
+            //apply a category that doesnt exist
+            FilteredCourses.ReportByCategory("xxx xxx");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredCourses.Count);
+        }
+
+        [TestMethod]
+        public void ReportByCategoryTestDataFound()
+        {
+            //create an instance of the filtered data
+            clsCourseCollection FilteredCourses = new clsCourseCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a category that doesnt exist
+            FilteredCourses.ReportByCategory("Science");
+            //check that the correct number of records are found
+            if (FilteredCourses.Count == 2)
+            {
+                //check that the first record is ID 36
+                if (FilteredCourses.CourseList[0].IDno != 2)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 37
+                if (FilteredCourses.CourseList[1].IDno != 6)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
+
     }
     
 }
