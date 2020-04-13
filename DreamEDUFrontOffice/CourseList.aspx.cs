@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DreamEDUClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -79,5 +80,36 @@ public partial class CourseList : System.Web.UI.Page
             //display an error
             lblError.Text = "Please select a record to delete from the list";
         }
+    }
+
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+        //create an instance of the course collection
+        clsCourseCollection Courses = new clsCourseCollection();
+        Courses.ReportByCategory(txtFilter.Text);
+        lstCourseList.DataSource = Courses.CourseList;
+        //set the name of the primary key
+        lstCourseList.DataValueField = "IDno";
+        //set the name of the field to display
+        lstCourseList.DataTextField = "Title";
+        //bind the data to the list
+        lstCourseList.DataBind();
+    }
+
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        //create an instance of the course collection
+        clsCourseCollection Courses = new clsCourseCollection();
+        Courses.ReportByCategory("");
+        //clear any existing filter to tidy up the interface
+        txtFilter.Text = "";
+        lstCourseList.DataSource = Courses.CourseList;
+        //set the name of the primary key
+        lstCourseList.DataValueField = "IDno";
+        //set the name of the field to display
+        lstCourseList.DataTextField = "Title";
+        //bind the data to the list
+        lstCourseList.DataBind();
+
     }
 }
