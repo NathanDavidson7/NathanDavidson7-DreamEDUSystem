@@ -108,6 +108,11 @@ namespace DreamEDUClasses
             DB.Execute("sproc_Courses_Update");
         }
 
+        public void ReportByCategory(object text)
+        {
+            throw new NotImplementedException();
+        }
+
         public void ReportByCategory(string Category)
         {
             //filters the records based upon a full or partial category
