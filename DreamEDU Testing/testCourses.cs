@@ -447,10 +447,8 @@ namespace DreamEDU_Testing
             String Error = "";
             //create a variable to store the test date data
             DateTime TestDate;
-            //set the date to todays date
-            TestDate = DateTime.Now.Date;
-            //change the date to whatever the date is less 100 years
-            TestDate = TestDate.AddDays(-1);
+            //set the date to date in 2019
+            TestDate = DateTime.Parse("31/12/2019");
             //convert the date variable to a string variable
             string LiveDate = TestDate.ToString();
             //invoke the method
