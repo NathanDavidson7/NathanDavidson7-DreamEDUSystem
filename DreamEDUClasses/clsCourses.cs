@@ -211,10 +211,11 @@ namespace DreamEDUClasses
             {
                 //copy the dateAdded value to the DateTemp variable
                 DateTemp = Convert.ToDateTime(LiveDate);
-                if (DateTemp < DateTime.Now.Date)
+                //check to see if the date is before 2020
+                if (DateTemp < DateTime.Parse("01/01/2020"))
                 {
                     //record the error 
-                    Error = Error + "The date cannot be in the past :";
+                    Error = Error + "The date cannot be before 2020 :";
                 }
                 //check to see if the date is greater than today's date
                 if (DateTemp > DateTime.Now.Date)
