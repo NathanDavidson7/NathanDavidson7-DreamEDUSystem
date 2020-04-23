@@ -120,7 +120,18 @@ public partial class ACourse : System.Web.UI.Page
             txtTitleCourse.Text = aCourse.Title;
             txtCategoryCourse.Text = aCourse.Category;
             txtTutorCourse.Text = aCourse.Tutor;
-            txtLiveDateCourse.Text = aCourse.LiveDate.ToString();
+            if (aCourse.LiveDate.Day < 10 & aCourse.LiveDate.Month < 10)
+            {
+                txtLiveDateCourse.Text = "0" + aCourse.LiveDate.Day + "/0" + aCourse.LiveDate.Month + "/" + aCourse.LiveDate.Year;
+            }
+            else if (aCourse.LiveDate.Day < 10)
+            {
+                txtLiveDateCourse.Text = "0" + aCourse.LiveDate.Day + "/" + aCourse.LiveDate.Month + "/" + aCourse.LiveDate.Year;
+            }
+            else if (aCourse.LiveDate.Month < 10)
+            {
+                txtLiveDateCourse.Text = aCourse.LiveDate.Day + "/0" + aCourse.LiveDate.Month + "/" + aCourse.LiveDate.Year;
+            }
             Available.Text = aCourse.Available.ToString();
             txtpriceCourse.Text = aCourse.Price.ToString();
 
@@ -148,7 +159,26 @@ public partial class ACourse : System.Web.UI.Page
         txtTitleCourse.Text = Courses.ThisCourse.Title;
         txtCategoryCourse.Text = Courses.ThisCourse.Category;
         txtTutorCourse.Text = Courses.ThisCourse.Tutor;
-        txtLiveDateCourse.Text = Courses.ThisCourse.LiveDate.ToString();
+        if (Courses.ThisCourse.LiveDate.Day < 10 & Courses.ThisCourse.LiveDate.Month < 10 & Courses.ThisCourse.LiveDate.Year < 2)
+        {
+            txtLiveDateCourse.Text = "0" + Courses.ThisCourse.LiveDate.Day + "/0" + Courses.ThisCourse.LiveDate.Month + "/000" + Courses.ThisCourse.LiveDate.Year;
+        }
+        else if (Courses.ThisCourse.LiveDate.Day < 10 & Courses.ThisCourse.LiveDate.Month < 10)
+        {
+            txtLiveDateCourse.Text = "0" + Courses.ThisCourse.LiveDate.Day + "/0" + Courses.ThisCourse.LiveDate.Month + "/" + Courses.ThisCourse.LiveDate.Year;
+        }
+        else if (Courses.ThisCourse.LiveDate.Day < 10)
+        {
+            txtLiveDateCourse.Text = "0" + Courses.ThisCourse.LiveDate.Day + "/" + Courses.ThisCourse.LiveDate.Month + "/" + Courses.ThisCourse.LiveDate.Year;
+        }
+        else if (Courses.ThisCourse.LiveDate.Month < 10)
+        {
+            txtLiveDateCourse.Text = Courses.ThisCourse.LiveDate.Day + "/0" + Courses.ThisCourse.LiveDate.Month + "/" + Courses.ThisCourse.LiveDate.Year;
+        }
+        else if (Courses.ThisCourse.LiveDate.Year < 2)
+        {
+            txtLiveDateCourse.Text = Courses.ThisCourse.LiveDate.Day + "/0" + Courses.ThisCourse.LiveDate.Month + "/000" + Courses.ThisCourse.LiveDate.Year;
+        }
         Available.Checked = Courses.ThisCourse.Available;
         txtpriceCourse.Text = Courses.ThisCourse.Price.ToString();
 
