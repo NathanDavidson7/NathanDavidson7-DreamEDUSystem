@@ -22,45 +22,69 @@ public partial class sStaff : System.Web.UI.Page
         //create a new instance of class
         clsStaff aStaff = new clsStaff();
         //capture the staffId
-        aStaff.sID = Convert.ToInt32(sID.Text);
+        string sID = txtsID.Text;
         //capture the staff Name
-        aStaff.sName = sName.Text;
+        string sName = txtsName.Text;
         //capture the staff Address
-        aStaff.sAddress = sAddress.Text;
+        string sAddress = txtsAddress.Text;
         //capture whetherTutorOrNot
-        aStaff.sTutorOrNot = Yes.Checked;
+        Boolean sTutorOrNot = (chkYes.Checked);
         //capture staffPhNo
-        aStaff.sPhone = sPhone.Text;
+        string sPhone = txtsPhone.Text;
         //capture staff joining date
-        aStaff.sJoinD = Convert.ToDateTime(sJoiningDate.Text);
-        //store the ID in the session object
-        Session["aStaff"] = aStaff;
-        //redirect to viewerPage
-        Response.Redirect("StaffViewer.aspx");
-    }
-
-    protected void btnFind_Click1(object sender, EventArgs e)
-    {
-        //create a new instance of class
-        clsStaff aStaff = new clsStaff();
-        //variable to store the primary key
-        Int32 vsID;
-        //variable to store the result of the find operation
-        Boolean Found = false;
-        //get the primary key entered by the user
-        vsID = Convert.ToInt32(sID.Text);
-        //find the record
-        Found = aStaff.Find(vsID);
-        //if Found
-        if (Found == true)
+        string sJoinD = txtsJoiningDate.Text;
+        //validate the data
+        string Error =  aStaff.Valid(sName, sAddress, sPhone, sJoinD);
+        if (Error == "")
         {
-            //dispay the values of the staff in the form
-            sID.Text = aStaff.sID.ToString();
-            sName.Text = aStaff.sName;
-            sAddress.Text = aStaff.sAddress;
-            sJoiningDate.Text = aStaff.sJoinD.ToString();
-            Yes.Text = aStaff.sTutorOrNot.ToString();
-            sPhone.Text = aStaff.sPhone;
+            //capture the name
+            aStaff.sName = sName;
+            //capture the Address
+            aStaff.sAddress = sAddress;
+            //capture the Phone number
+            aStaff.sPhone = sPhone;
+            //capture the Joining date
+            aStaff.sJoinD = Convert.ToDateTime(txtsJoiningDate);
+
+            //store the ID in the session object
+            Session["aStaff"] = aStaff;
+            //redirect to viewerPage
+            Response.Write("StaffViewer.aspx");
+        }
+        else
+        {
+            //display the error message
+            lblError.Text = Error;
         }
     }
+
+
+
+
+
+    protected void btnFind_Click(object sender, EventArgs e)
+    { 
+            //create a new instance of class
+            clsStaff aStaff = new clsStaff();
+            //variable to store the primary key
+            Int32 vsID;
+            //variable to store the result of the find operation
+            Boolean Found = false;
+            //get the primary key entered by the user
+            vsID = Convert.ToInt32(txtsID.Text);
+            //find the record
+            Found = aStaff.Find(vsID);
+            //if Found
+            if (Found == true)
+            {
+                //dispay the values of the staff in the form
+                txtsID.Text = aStaff.sID.ToString();
+                txtsName.Text = aStaff.sName;
+                txtsAddress.Text = aStaff.sAddress;
+                txtsJoiningDate.Text = aStaff.sJoinD.ToString();
+                chkYes.Text = aStaff.sTutorOrNot.ToString();
+                txtsPhone.Text = aStaff.sPhone;
+            }
+    }
+
 }

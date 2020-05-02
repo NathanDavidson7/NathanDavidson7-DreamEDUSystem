@@ -9,25 +9,28 @@
 <body>
     <form id="form1" runat="server">
         <div style="height: 362px">
-            sID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="sID" runat="server"></asp:TextBox>
-            &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" Text="Find" />
+            sID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtsID" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnFind" runat="server" Text="Find" OnClick="btnFind_Click"  />
             <br />
-            sName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sName" runat="server"></asp:TextBox>
+            sName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtsName" runat="server"></asp:TextBox>
             <br />
-            sAddress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="sAddress" runat="server"></asp:TextBox>
+            sAddress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtsAddress" runat="server"></asp:TextBox>
             <br />
-            sTutorOrNot&nbsp;
-            <asp:CheckBox ID="Yes" runat="server"  />
+            sTutorOrNot&nbsp;&nbsp;
+            <asp:CheckBox ID="chkYes" runat="server"  />
             <br />
-            sPhone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="sPhone" runat="server"></asp:TextBox>
+            sPhone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtsPhone" runat="server"></asp:TextBox>
             <br />
             sJoiningDate&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="sJoiningDate" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtsJoiningDate" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="OK" />
+            &nbsp;<br />
+            <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
             <br />
         </div>
     </form>

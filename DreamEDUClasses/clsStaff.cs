@@ -120,19 +120,81 @@ namespace DreamEDUClasses
             }
 
         }
-
-        //public bool Find(string sName)
-        //{
-        //    mSID = 21;
-        //    msName = "Jon";
-        //    msAddress = "Test Address";
-        //    msJoinD = Convert.ToDateTime("01/01/2010");
-        //    msPhNo = "1234567890";
-        //    msTutorOrNot = true;
-
-        //    return true;
-        //}
+        
+        //function for the public validation method
+        public string Valid(string sName,
+                           string sAddress,
+                           string sPhone,
+                           string sJoiningDate)
+        ///this function accepts 5 parameters for vaidation
+        ///the function returns a string containing any error message
+        ///if no errors found then a blank string is returned
+        {
+            //create a string variable to store the error
+            String Error = "";
+            //create a temporary variable to store date values
+            DateTime DateTemp;
+            
+            //if the sName is blank
+            if (sName.Length == 0)
+            {
+                //record Error
+                Error = Error + "The name may not be blank";
+            }
+            //if sName is greater than 20 characters
+            if(sName.Length > 20)
+            {
+                //record Error
+                Error = Error + "The name should have less than 20 characters";
+            }
+            
+            //if the sAddress is blank
+            if (sAddress.Length == 0)
+            {
+                //record Error
+                Error = Error + "The name may not be blank";
+            }
+            //if sAddress is greater than 20 characters
+            if (sAddress.Length > 50)
+            {
+                //record Error
+                Error = Error + "The address should have less than 20 characters";
+            }
+            //if sPhone is blank
+            if (sPhone.Length == 0)
+            {
+                Error = Error + "The Phone may not be blank";
+            }
+            //if sPhone is greater than 10
+            if (sPhone.Length > 10)
+            {
+                Error = Error + "The Phone should have 10 characters";
+            }
+            //copy the sJoiningDate value to the DataTemp variable
+            try
+            {
+                DateTemp = Convert.ToDateTime(sJoiningDate);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past";
+                }
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record Error
+                    Error = Error + "The date cannot be in the future";
+                }
+            }
+            catch
+            {
+                Error = Error + "invalid date format";
+            }
+            //return any error messages
+            return Error;
+        }
     }
+
+    
 
 
 }
