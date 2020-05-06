@@ -69,7 +69,7 @@ namespace DreamEDUClasses
                 msPhNo = value;
             }
         }
-        public DateTime sJoinD
+        public DateTime sJoiningDate
         {
             get
             {
@@ -107,7 +107,7 @@ namespace DreamEDUClasses
                 sAddress = Convert.ToString(DB.DataTable.Rows[0]["sAddress"]);
                 sTutorOrNot = Convert.ToBoolean(DB.DataTable.Rows[0]["sTutorOrNot"]);
                 sPhone = Convert.ToString(DB.DataTable.Rows[0]["sPhone"]);
-                sJoinD = Convert.ToDateTime(DB.DataTable.Rows[0]["sJoiningDate"]);
+                sJoiningDate = Convert.ToDateTime(DB.DataTable.Rows[0]["sJoiningDate"]);
                 //return that everything worked Ok
                 return true;
 

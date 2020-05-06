@@ -50,7 +50,7 @@ namespace DreamEDU_Testing
             Boolean OK = true;
             Int32 sID = 1;
             Found = aStaff.Find(sID);
-            if (aStaff.sJoinD != Convert.ToDateTime("01/01/2001"))
+            if (aStaff.sJoiningDate != Convert.ToDateTime("01/01/2001"))
             {
                 OK = false;
             }

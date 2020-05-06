@@ -99,9 +99,9 @@ namespace DreamEDU_Testing
             //create some test data to assign 
             DateTime TestData = DateTime.Now.Date;
             //assign data 
-            astaff.sJoinD = TestData;
+            astaff.sJoiningDate = TestData;
             //test to see that two values are the same
-            Assert.AreEqual(astaff.sJoinD, TestData);
+            Assert.AreEqual(astaff.sJoiningDate, TestData);
         }
         public void ValidMethodOK()
         {

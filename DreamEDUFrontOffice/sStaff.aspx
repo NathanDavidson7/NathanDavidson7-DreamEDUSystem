@@ -28,7 +28,7 @@
             sJoiningDate&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtsJoiningDate" runat="server"></asp:TextBox>
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="OK" />
+            <asp:Button ID="btnOK" runat="server" OnClick="Button1_Click1" Text="OK" />
             &nbsp;<br />
             <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
             <br />

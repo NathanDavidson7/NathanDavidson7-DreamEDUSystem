@@ -30,7 +30,7 @@ public partial class StaffViewer : System.Web.UI.Page
         Response.Write(aStaff.sPhone);
         Response.Write("<br>");
         //display the staffJoiningDate
-        Response.Write(aStaff.sJoinD);
+        Response.Write(aStaff.sJoiningDate);
         Response.Write("<br>");
 
     }
